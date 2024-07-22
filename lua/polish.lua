@@ -45,3 +45,19 @@ end
 vim.keymap.set("n", prompt_term_cmd_key, prompt_term_cmd)
 vim.keymap.set("n", prompt_term_direction_key, prompt_term_direction)
 vim.keymap.set("n", exec_curr_cmd_key, exec_curr_cmd)
+
+if vim.g.neovide then
+  vim.o.guifont = "JetBrainsMonoNL NFM"
+  vim.g.neovide_scale_factor = 0.95
+end
+
+if vim.fn.has "win32" == 1 then
+  vim.o.shell = "powershell"
+  vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+  vim.o.shellquote = '"'
+  vim.o.shellxquote = ""
+  vim.o.shellpipe = "| Out-File -Encoding UTF8"
+  vim.o.shellredir = "| Out-File -Encoding UTF8"
+  vim.o.shellxescape = ""
+  vim.o.shellxquote = ""
+end
