@@ -85,7 +85,7 @@ return {
         rainbow_delimiters = true,
         which_key = true,
       },
-      transparent_background = true,
+      transparent_background = false,
       color_overrides = {
         frappe = {
           base = "#1e1e1e",
@@ -192,6 +192,16 @@ return {
     opts = { integrations = { lsp_trouble = true } },
   },
   {
-    "lunacookies/vim-colors-xcode",
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    init = function()
+      vim.g.gruvbox_material_background = "hard"
+      vim.g.gruvbox_material_foreground = "mix"
+      vim.g.gruvbox_material_dim_inactive_windows = 0
+      vim.g.gruvbox_material_float_style = "dim"
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_enable_bold = true
+      vim.cmd.colorscheme "gruvbox-material"
+    end,
   },
 }
